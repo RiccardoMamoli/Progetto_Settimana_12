@@ -14,7 +14,7 @@ public class Guaritore extends ClasseBasePersonaggio{
 
     public void ricaricaMana() {
         mana += 10;
-        System.out.println(getNome() + "ha ricaricato il suo mana. Ora il valore è di " + getMana());
+        System.out.println(getNome() + " ha ricaricato il suo mana. Ora il valore è di " + getMana() + ".");
     }
 
     private boolean useMana(int costoMana) {

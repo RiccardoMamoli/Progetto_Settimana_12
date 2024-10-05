@@ -4,33 +4,108 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Guerriero guerriero = new Guerriero("Aragor", 100, 50, "Spada");
-        Guerriero guerriero2 = new Guerriero("Legolas", 100, 50,"Arco");
-        Mago mago = new Mago("Silente", 100, 50,50,"Avadakedavra", "Expeliarmus");
-        Guaritore guaritore = new Guaritore("Frodo", 100, 50, 10, "Bastone");
-        Guaritore guaritore2 = new Guaritore("Bilbo", 100, 50, 20, "Erbe Mediche");
+        System.out.println("Ciao! Creiamo i personaggi. Partiamo dal tuo primo guerriero.");
+        System.out.println("Come si chiama?");
+        String nameGuerriero1 = sc.nextLine();
+        System.out.println("Quanti punti vita ha?");
+        int puntiVita1 = sc.nextInt();
+        System.out.println("Quanti punti forza ha?");
+        int puntiForza1 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Che arma usa?");
+        String tipoArma1 = sc.nextLine();
+
+        Guerriero guerriero = new Guerriero(nameGuerriero1, puntiVita1, puntiForza1, tipoArma1);
+        System.out.println(" ");
+        System.out.println("Ottimo! Creiamo il secondo guerriero.");
+        System.out.println("Come si chiama?");
+        String nameGuerriero2 = sc.nextLine();
+        System.out.println("Quanti punti vita ha?");
+        int puntiVita2 = sc.nextInt();
+        System.out.println("Quanti punti forza ha?");
+        int puntiForza2 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Che arma usa?");
+        String tipoArma2 = sc.nextLine();
+
+        Guerriero guerriero2 = new Guerriero(nameGuerriero2, puntiVita2, puntiForza2,tipoArma2);
+        System.out.println(" ");
+        System.out.println("Eccellente! Creiamo un mago ora!");
+        System.out.println("Come si chiama?");
+        String nameMago = sc.nextLine();
+        System.out.println("Quanti punti vita ha?");
+        int puntiVitaMago = sc.nextInt();
+        System.out.println("Quanti punti intelligenza ha?");
+        int puntiIntelligenzaMago = sc.nextInt();
+        System.out.println("Quanti punti mana ha?");
+        int puntiMana = sc.nextInt();
+        System.out.println("Qual'è il suo incantesimo primario?");
+        String incantesrimoPrimario = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Qual'è il suo incantesimo secondario?");
+        String incantesrimoSecondario = sc.nextLine();
+
+        Mago mago = new Mago(nameMago, puntiVitaMago, puntiIntelligenzaMago,puntiMana,incantesrimoPrimario, incantesrimoSecondario);
+        System.out.println(" ");
+        System.out.println("Benissimo! Creiamo ora due guaritori!");
+        System.out.println("Come si chiama il primo?");
+        String nameGuaritore1 = sc.nextLine();
+        System.out.println("Quanti punti vita ha?");
+        int puntiGuaritore1 = sc.nextInt();
+        System.out.println("Quanti punti mana ha?");
+        int puntiManaGuaritore1 = sc.nextInt();
+        System.out.println("Quanto è alto il suo potere curativo?");
+        int potereCurativo1 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Qual'è il suo strumento di cura? Puoi scegliere tra Pozione, Erbe Medicinali, Bastone Curativo.");
+        String strumentoDiCura1 = sc.nextLine();
+
+        Guaritore guaritore = new Guaritore(nameGuaritore1, puntiGuaritore1, puntiManaGuaritore1, potereCurativo1, strumentoDiCura1);
+
+        System.out.println(" ");
+        System.out.println("Ed infine il secondo guaritore!");
+        System.out.println("Come si chiama?");
+        String nameGuaritore2 = sc.nextLine();
+        System.out.println("Quanti punti vita ha?");
+        int puntiGuaritore2 = sc.nextInt();
+        System.out.println("Quanti punti mana ha?");
+        int puntiManaGuaritore2 = sc.nextInt();
+        System.out.println("Quanto è alto il suo potere curativo?");
+        int potereCurativo2 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Qual'è il suo strumento di cura? Puoi scegliere tra Pozione, Erbe Medicinali, Bastone Curativo.");
+        String strumentoDiCura2 = sc.nextLine();
+
+        Guaritore guaritore2 = new Guaritore(nameGuaritore2, puntiGuaritore2, puntiManaGuaritore2, potereCurativo2, strumentoDiCura2);
+
+
         Goblin goblin = new Goblin("Gollum", 100, 10);
         Goblin smeagle = new Goblin("Smeagle", 100, 15);
 
         ClasseBasePersonaggio[] personaggio = {guerriero, guerriero2, mago, guaritore, guaritore2, goblin, smeagle};
-        Scanner sc = new Scanner(System.in);
+
+
 
         while (true) {
-
+            System.out.println(" ");
+            System.out.println("Oh no, ci sono due goblin sul nostro cammino! Dobbiamo difenderci.");
+            System.out.println(" ");
             System.out.println("Scegli il tuo personaggio: ");
-            System.out.println("1) Aragor");
-            System.out.println("2) Legolas");
-            System.out.println("3) Silente");
-            System.out.println("4) Frodo");
-            System.out.println("5) Bilbo");
+            System.out.println("1)" + personaggio[0].getNome());
+            System.out.println("2)" + personaggio[1].getNome());
+            System.out.println("3)" + personaggio[2].getNome());
+            System.out.println("4)" + personaggio[3].getNome());
+            System.out.println("5)" + personaggio[4].getNome());
+
+
 
             int selezione = sc.nextInt();
             sc.nextLine();
 
             switch (selezione) {
                 case 1: case 2:
-                    System.out.println(" ");
                     System.out.println("Ottima scelta! Cosa vuoi far fare al tuo personaggio?");
                     System.out.println(" ");
                     System.out.println("1) Incrementa la forza.");
