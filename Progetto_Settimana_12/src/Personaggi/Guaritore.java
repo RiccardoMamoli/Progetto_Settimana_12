@@ -52,7 +52,7 @@ public class Guaritore extends ClasseBasePersonaggio{
 
         if(useMana(costoMana)) {
             alleato.setPuntiVita(alleato.getPuntiVita() + cura);
-            System.out.println(getNome() + "ha curato" + alleato.getNome() + "!");
+            System.out.println(getNome() + " ha curato " + alleato.getNome() + "!");
             System.out.println("+".repeat(cura));
         }
     }
