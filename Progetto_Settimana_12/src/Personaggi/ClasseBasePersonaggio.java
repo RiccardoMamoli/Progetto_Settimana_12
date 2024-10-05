@@ -24,7 +24,7 @@ public abstract class ClasseBasePersonaggio {
     public void setPuntiVita(Integer puntiVita) {
         this.puntiVita = Math.max(puntiVita,0);
         if(puntiVita == 0) {
-            System.out.println(getNome() + "è morto!");
+            System.out.println(getNome() + " è morto!");
         }
     }
 

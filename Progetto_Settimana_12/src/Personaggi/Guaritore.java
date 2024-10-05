@@ -30,7 +30,7 @@ public class Guaritore extends ClasseBasePersonaggio{
     public void curaAlleato(ClasseBasePersonaggio alleato) {
 
         if(alleato.getPuntiVita() == 100) {
-            System.out.println(alleato.getNome() + "ha gia il massimo dei punti vita.");
+            System.out.println(alleato.getNome() + " ha gia il massimo dei punti vita.");
             return;
         }
 

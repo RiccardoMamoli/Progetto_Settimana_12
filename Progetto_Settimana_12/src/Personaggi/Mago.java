@@ -18,11 +18,11 @@ public class Mago extends ClasseBasePersonaggio implements Scontro {
 
     public void ricaricaMana() {
         mana += 15;
-        System.out.println( getMana() + "ha ricaricato il suo mana. Ora il valore è di " + getMana());
+        System.out.println( getNome() + " ha ricaricato il suo mana. Ora il valore è di " + getMana() + ". Cos'altro vuoi far fare al tuo personaggio?");
     }
 
     private boolean usaMana(int costoMana) {
-        if (costoMana >= mana) {
+        if (costoMana <= mana) {
             mana -= costoMana;
             return true;
         } else {
@@ -37,9 +37,10 @@ public class Mago extends ClasseBasePersonaggio implements Scontro {
         String inc = random.nextBoolean() ? incantesimoPrimario : incantesimoSecondario; // random + next boolean genera un risultato randomico tra true o false
         int costo = inc.equals(incantesimoPrimario) ? 10 : 5;
         if (usaMana(costo)) {
-            System.out.println(getNome() + " utilizza " + inc + " contro " + avversario.getNome());
-            System.out.println(inc + "*".repeat(getPuntiIntelligenza()) + "-".repeat(getPuntiIntelligenza()));
+            System.out.println(getNome() + " utilizza " + inc + " contro " + avversario.getNome() + ".");
+            System.out.println(inc + " " + "*".repeat(getPuntiIntelligenza()) + "-".repeat(getPuntiIntelligenza()));
             avversario.setPuntiVita(avversario.getPuntiVita() - getPuntiIntelligenza());
+            System.out.println(avversario.getNome() + " ha " + avversario.getPuntiVita() + " punti vita rimanenti.");
         }
     }
 

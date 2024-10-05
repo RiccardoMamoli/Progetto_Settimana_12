@@ -13,12 +13,18 @@ public class Guerriero extends ClasseBasePersonaggio implements Scontro {
 
     public void prendiPozione() {
       forza += 10;
-      System.out.println(getNome() + " ha preso una pozione! Ora la sua forza è a " + forza);
+      System.out.println(getNome() + " ha preso una pozione! Ora la sua forza è a " + forza + ". Cos'altro vuoi far fare al tuo personaggio?");
     }
 
     public void malus() {
-        forza -= 10;
-        System.out.println(getNome() + "è indebolito! La sua forza ora è scesa a " + forza);
+        if(forza > 0) {
+            forza -= 10;
+            System.out.println(getNome() + " è indebolito! La sua forza ora è scesa a " + forza + ". Cos'altro vuoi far fare al tuo personaggio?");
+        } else {
+            System.out.println(getNome() + " non ha piu punti forza.");
+        }
+
+
     }
 
 
